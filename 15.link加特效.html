@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+        <style>
+            .demo{
+                width: 200px;
+                height: 200px;
+                background:pink;
+            }
+        </style>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <div class="demo" my-effect></div>
+
+        </div>
+        <script src='./node_modules/angular/angular.js'></script>
+        <script>
+            //DOM操作
+            // angular.element(document.querySelector('.demo'))
+            var app = angular.module('myApp',[]);
+            app.controller('myController',function($scope){
+            
+            })
+            app.directive('myEffect',[function(){
+                return {
+                    //加特效的
+                    link:function(scope,element,attributes){
+                        // console.log(element); mouseenter mouseover 
+                        element.on('mouseenter',function(){
+                            element.css('background','blue');
+                        })
+
+                        element.on('mouseleave',function(){
+                            element.css('background','pink');
+                        })
+                    }
+                }
+            }])
+        </script>
+    </body>
+</html> 

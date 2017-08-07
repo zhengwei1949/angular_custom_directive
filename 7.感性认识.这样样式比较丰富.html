@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <div my-demo2 bgcolor="red" color="green"></div>
+            <div my-demo2 bgcolor="yellow" color="pink"></div>
+        </div>
+        <script src="./node_modules/angular/angular.js"></script>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myController',function(){
+
+            })
+            app.directive('myDemo2',[function(){
+                return {
+                    template:'<h1 style="background-color:{{bgcolor}};color:{{color}}">测试文字</h1>',
+                    scope:{
+                        bgcolor:'@',//@去使用的地方的属性里面去找
+                        color:'@'
+                    }
+                }
+            }]);
+    
+        </script>
+    </body>
+</html> 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <div my-demo></div>
+        </div>
+        <script src='./node_modules/angular/angular.js'></script>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myController',function($scope){
+             
+            })
+            app.directive('myDemo',[function(){
+                return {
+                    templateUrl:'./a.html'
+                }
+            }])
+        </script>
+    </body>
+</html> 

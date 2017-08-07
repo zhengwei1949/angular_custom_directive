@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <div ng-demo1>wefw</div>
+            <div ng-demo1>aaa</div>
+            <div ng-demo1>bbb</div>
+            <div ng-demo1>fiwoifoihohowefwof</div>
+        </div>
+        <script src="./node_modules/angular/angular.js"></script>
+        <script src="./demo_directive.js"></script>
+        <script>
+            var app = angular.module('myApp',['demoDirective']);
+            app.controller('myController',function($scope){
+                
+            })
+        
+        </script>
+    </body>
+</html> 

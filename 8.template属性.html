@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <div my-demo></div>
+        </div>
+        <script src='./node_modules/angular/angular.js'></script>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myController',function($scope){
+             
+            })
+            // 指令的名字在js中是驼峰式，在html中是中划线的方式
+            // 缺点：如果html片段太复杂了写在一行不太好，不直观 --> 解决方案 --> templateUrl 
+            app.directive('myDemo',[function(){
+                return {
+                    template:'<div><h3>我是标题</h3><p>我是内容</p></div>'
+                }
+            }])
+        </script>
+    </body>
+</html> 

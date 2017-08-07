@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <div my-demo mycolor="red" mybgcolor="green"></div>
+            <div my-demo mycolor="yellow" mybgcolor="pink"></div>
+        </div>
+        <script src='./node_modules/angular/angular.js'></script>
+        <script type="text/ng-template" id="tpl">
+            <div style="background:{{mybgcolor}};color:{{color}}">
+                <h3>我是标题</h3>
+                <p>内容</p>
+            </div>
+        </script>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myController',function($scope){
+             
+            })
+            app.directive('myDemo',[function(){
+                return {
+                    templateUrl:'tpl',
+                    scope:{
+                        mybgcolor:'@',
+                        color:'@'
+                    }
+                }
+            }])
+        </script>
+    </body>
+</html> 

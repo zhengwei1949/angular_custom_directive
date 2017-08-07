@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>demo</title>
+    </head>
+    <body ng-app='myApp'>
+        <div ng-controller='myController'>
+            <!--自定义属性 attribute -->
+            <div my-demo></div>
+            <!--类名 class-->
+            <div class="my-demo"></div>
+            <!--标签 element-->
+            <my-demo></my-demo>
+        </div>
+        <script src='./node_modules/angular/angular.js'></script>
+        <script type="text/ng-template" id="tpl">
+            <div>
+                <h3>我是标题</h3>
+                <p>我是内容</p>
+            </div>
+        </script>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myController',function($scope){
+             
+            })
+            app.directive('myDemo',[function(){
+                return {
+                    templateUrl:'tpl',
+                    restrict:'ACE',
+                    replace:true
+                }
+            }])
+        </script>
+    </body>
+</html> 
